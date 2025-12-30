@@ -16,7 +16,7 @@
     }
 
     @font-face {
-      font-family: "cirillicolda";
+      font-family:'cirillicolda';
       src: url("font/Olympia Deco.ttf") format("truetype");
       font-weight: 900;
     }
@@ -75,8 +75,8 @@
 
     h1 {
       text-align: center;
-      font-size: 22px;
-      line-height: 1.4;
+      font-size: 24px;
+      line-height: 0.9;
       margin-bottom: 10px;
       color: #3e2b22;
     }
@@ -84,9 +84,9 @@
     p.subtitle {
         text-align: left;
         margin-bottom: 10px;
-         margin-left: 25px;
+         margin-left: 20px;
       
-        font-size: 16px;
+        font-size: 18px;
         color: #555;
     }
 
@@ -171,7 +171,7 @@
       text-align: left;
       padding-left: 50px;
       text-indent: 215px;
-      line-height: 2;
+      line-height: 1.92;
       font-size: 15px;
     }
     
@@ -211,8 +211,8 @@
           margin-top: 20px;
       }
       
-      h1 { font-size: 18px; }
-      p.subtitle { font-size: 14px;
+      h1 { font-size: 20px; }
+      p.subtitle { font-size: 16px ;
       align-self: left; }
     }
 
@@ -222,6 +222,17 @@
           transform: scale(0.55); 
           margin-bottom: -300px; 
        }
+    }
+
+    body, input, button, select, label, h1, p, option,textarea {
+    font-family: 'Montserrat', sans-serif !important;
+}
+
+/* Оставляем старый шрифт ТОЛЬКО в карточке */
+    .card, .field {
+    /* Замените 'serif' на ваш конкретный шрифт для карточки, 
+       если у вас подключен другой (например, 'Oswald' или 'Caveat') */
+      font-family: inherit; 
     }
   </style>
 </head>
@@ -235,7 +246,7 @@
 
 <div class="container">
   <div>
-    <h1>Электронные пригласительные на Квест-шоу "Форт Боярд" с индивидуальным дизайном</h1>
+    <h1>Электронные пригласительные на Квест-шоу  с индивидуальным дизайном</h1>
     <p class="subtitle" align="left">Создайте персональные пригласительные для каждого участника на День рождения или любой другой повод!</p>
   </div>
   
@@ -316,41 +327,41 @@
 const TEMPLATES = {
    kid: {
     bg: 'kid.png',
-     invite: { top: 240,left: 150,size: 20  },
-    address: { top: 356, left: 17,},
+     invite: { top: 240,left: 220,size: 20  },
+    address: { top: 358, left: 17,},
     date: { top: 420, left: 145, align: "left" },
     time: { top: 449, left: 70 },
-    eventName: { top: 524, left: 60,size: 20 } },
+    eventName: { top: 525, left: 53,size: 18 } },
   adult: { 
     bg: 'adult.png',
-    invite: { top: 242,left: 150, size: 20  },  
-    address: { top: 360, left: 20 }, 
+    invite: { top: 243,left: 223, size: 20  },  
+    address: { top: 363, left: 20 }, 
     date: { top: 425, left: 145,align: "left" },
     time: { top: 454, left: 70 },
-    eventName: { top: 536, left: 40, size: 20 }
+    eventName: { top: 534, left: 43, size: 18 }
   },
   school: { 
     bg: 'school.png', 
-    invite: { top: 263,left: 37,size: 20  }, 
-    address: { top: 395, left: 15 }, 
-    date: { top: 458, left: 145,align: "left" },
-    time: { top: 487, left: 70 },
-    field1: { top: 297, left: -53 },    
-    field2: { top: 294, left: 380 }     
+    invite: { top: 263,left: 48,size: 20  }, 
+    address: { top: 397, left: 15 }, 
+    date: { top: 459, left: 145,align: "left" },
+    time: { top: 488, left: 70 },
+    field1: { top: 296, left: -53 },    
+    field2: { top: 294, left: 370 }     
   },
   kindergarten: { 
     bg: 'kindergarten.png', 
     invite: { top: 263,left: 37,size: 20  }, 
-    address: { top: 405, left: 20 },  
+    address: { top: 406, left: 20 },  
     date: { top: 470, left: 145,align: "left" },
     time: { top: 499, left: 70 },
-    field1: { top: 297, left:300 },    
+    field1: { top: 297, left:310 },    
     field2: { top: 325, left: -140 }     
   },
   trip: { 
     bg: 'trip.png', 
-     invite: { top: 263,left: 37,size: 20  }, 
-    address: { top: 408, left: 15 }, 
+     invite: { top: 263,left: 45,size: 20  }, 
+    address: { top: 409, left: 15 }, 
     date: { top: 471, left: 145,align: "left"},
     time: { top: 501, left: 70 },
      field1: { top: 297, left: -50 },    
@@ -358,62 +369,65 @@ const TEMPLATES = {
   },
   corporate: {
     bg: 'corporate.png', 
-    invite: { top: 239,left: 20,size: 20  },
+    invite: { top: 239,left: 40,size: 20  },
     address: { top: 392, left: 20 },
     date: { top: 455, left: 145,align: "left" },
     time: { top: 484, left: 70 },
     guest: { top: 260, left: 40 },
-    eventName: {  top: 306,left: 20}
+    eventName: {  top: 303,left: 40,size: 20 }
   }
 };
 
 const EXPORT_CONFIG = {
     canvasWidth: 1000,
     canvasHeight: 1428,
+   
     kid: {
-        invite:  { x: 603, y: 472, size: 40, align: 'center' },
-        address: { x: 560, y: 724, size: 28, align: 'center' },
-        date:    { x: 270, y: 840, size: 30, align: 'left' },
-        time:    { x: 470, y: 900, size: 30, align: 'left' },
-        eventName: {  x: 500, y: 1063, size: 36, align: 'center' }
+        invite:    { x: 670, y: 479, size: 40, align: 'center' },
+        address:   { x: 560, y: 725, size: 28, align: 'center' },
+        date:      { x: 280, y: 844, size: 30, align: 'left' },
+        time:      { x: 480, y: 903, size: 30, align: 'left' },
+        eventName: { x: 500, y: 1058, size: 36, align: 'center' }
     },
     adult: {
-        invite:  { x: 500, y: 480, size: 40, align: 'left' },
-        address: { x: 575, y: 735, size: 28, align: 'left' },
-        date:    { x: 282, y: 850, size: 30, align: 'left' },
-        time:    { x: 470, y: 910, size: 30, align: 'left' },
-        eventName: {  x: 500, y: 1070, size: 36, align: 'center' }
+        invite:    { x: 489, y: 483, size: 40, align: 'left' },
+        address:   { x: 567, y: 735, size: 28, align: 'left' },
+        date:      { x: 282, y: 853, size: 30, align: 'left' },
+        time:      { x: 475, y: 912, size: 30, align: 'left' },
+        eventName: { x: 500, y: 1076, size: 36, align: 'center' }
     },
     school: {
-  invite: { x: 500, y: 520, size: 35, align: 'center' },
-  field1: { x: 400, y: 592, size: 28, align: 'center' },
-  field2: { x: 805, y: 586, size: 28, align: 'center' },
-  address: { x: 567, y: 802, size: 28, align: 'center' },
-  date: { x: 280, y: 924, size: 30, align: 'left' },
-  time: { x: 470, y: 980, size: 30, align: 'left' }
-},
+        invite:  { x: 500, y: 530, size: 35, align: 'center' },
+        field1:  { x: 400, y: 595, size: 28, align: 'center' },
+        field2:  { x: 818, y: 590, size: 28, align: 'center' },
+        address: { x: 567, y: 806, size: 28, align: 'center' },
+        date:    { x: 280, y: 924, size: 30, align: 'left' },
+        time:    { x: 470, y: 983, size: 30, align: 'left' }
+    },
     kindergarten: {
-  invite: { x: 500, y: 526 , size: 35, align: 'center' },
-  field1: { x: 775, y: 592, size: 28, align: 'center' },
-  field2: { x: 315, y: 650, size: 28, align: 'center' },
-  address: { x: 575, y: 825, size: 28, align: 'center' },
-  date: { x: 280, y: 945, size: 30, align: 'left' },
-  time: { x: 470, y: 1005, size: 30, align: 'left' } 
-},
-  trip: { invite: { x: 500, y: 525, size: 35, align: 'center' },
-  field1: { x: 402, y: 590, size: 28, align: 'center' },
-  field2: { x: 791, y: 590, size: 28, align: 'center' },
-  address: { x: 567, y: 830, size: 28, align: 'center' },
-  date: { x: 281, y: 945, size: 30, align: 'left' },
-  time: { x: 471, y: 1005, size: 30, align: 'left' }
-},
+        invite:  { x: 500, y: 530, size: 35, align: 'center' },
+        field1:  { x: 765, y: 593, size: 28, align: 'center' },
+        field2:  { x: 315, y: 650, size: 28, align: 'center' },
+        address: { x: 575, y: 825, size: 28, align: 'center' },
+        date:    { x: 280, y: 946, size: 30, align: 'left' },
+        time:    { x: 470, y: 1006, size: 30, align: 'left' }
+    },
+    trip: { 
+        invite:  { x: 500, y: 529, size: 35, align: 'center' },
+        field1:  { x: 402, y: 593, size: 28, align: 'center' },
+        field2:  { x: 800, y: 592, size: 28, align: 'center' },
+        address: { x: 567, y: 830, size: 28, align: 'center' },
+        date:    { x: 281, y: 949, size: 30, align: 'left' },
+        time:    { x: 471, y: 1008, size: 30, align: 'left' }
+    },
     corporate: { 
-      invite: { x: 500, y: 472, size: 40, align: 'center' }, 
-      address: { x: 570, y: 798, size: 28, align: 'center' }, 
-      date: { x: 280, y: 913, size: 30, align: 'left' }, 
-      time: { x: 472, y: 970, size: 30, align: 'left' },
-      eventName: {  x: 500, y: 597, size: 38, align: 'center' }  }
-};
+        invite:    { x: 501, y: 476, size: 40, align: 'center' }, 
+        address:   { x: 570, y: 795, size: 28, align: 'center' }, 
+        date:      { x: 280, y: 914, size: 30, align: 'left' }, 
+        time:      { x: 472, y: 973, size: 30, align: 'left' },
+        eventName: { x: 501, y: 606, size: 38, align: 'center' }  
+    },
+  }
 
 const typeEl = document.getElementById('type');
 const dynamicFields = document.getElementById('dynamic-fields');
@@ -586,7 +600,7 @@ document.getElementById('download').addEventListener('click', async () => {
   const drawText = (text, cfg) => {
     if (!text || !cfg) return;
     // ВАЖНО: используем кавычки для cirillicolda
-    ctx.font = `600 ${cfg.size || 30}px "cirillicolda", "Montserrat", sans-serif`;
+    ctx.font = `600 ${cfg.size || 30}px "cirillicolda"`;
     ctx.fillStyle = "#000000";
     ctx.textAlign = cfg.align || 'center';
     ctx.textBaseline = 'top';
@@ -607,7 +621,7 @@ document.getElementById('download').addEventListener('click', async () => {
     let y = cfg.y;
 
     // Интервал между строками адреса (тоже уменьшен под шрифт 14)
-    const lineHeight = 60; 
+    const lineHeight = 58; 
     let isFirstLine = true;
     let currentX = cfg.x;
 
@@ -670,5 +684,4 @@ document.getElementById('download').addEventListener('click', async () => {
 </body>
 
 </html>
-
 
