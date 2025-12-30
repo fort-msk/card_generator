@@ -235,7 +235,7 @@
 
 <div class="container">
   <div>
-    <h1>Электронные пригласительные на Квест-шоу "Форт Боярд"</h1>
+    <h1>Электронные пригласительные на Квест-шоу "Форт Боярд" с индивидуальным дизайном</h1>
     <p class="subtitle" align="left">Создайте персональные пригласительные для каждого участника на День рождения или любой другой повод!</p>
   </div>
   
@@ -491,7 +491,7 @@ function renderDynamicFields() {
   } else if (type === 'kindergarten') {
     dynamicFields.innerHTML = '<label>Воспитанник сада</label><input id="input1" maxlength="14" required><label>Группа</label><input id="input2" maxlength="5" required>';
   } else if (type === 'corporate') {
-    dynamicFields.innerHTML = '<label>Название мероприятия</label><input id="eventNameInput" maxlength="50" required>';
+    dynamicFields.innerHTML = '<label>Повод для корпоратива в дательном падеже</label><input id="eventNameInput" maxlength="50" required>';
   } else if (type === 'kid' || type === 'adult') {
     dynamicFields.innerHTML = `
       <label>Имя именинника</label>
@@ -670,4 +670,5 @@ document.getElementById('download').addEventListener('click', async () => {
 </body>
 
 </html>
+
 
